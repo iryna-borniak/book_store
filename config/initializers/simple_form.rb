@@ -51,13 +51,12 @@ SimpleForm.setup do |config|
     # Calculates readonly automatically from readonly attributes
     b.optional :readonly
 
-    ## Inputs
-    # b.use :input, class: 'input', error_class: 'is-invalid', valid_class: 'is-valid'
+    ## Inputs      
     # b.use :label_input
     b.use :label
-    b.use :input, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"
+    b.use :input, class: "input", error_class: "is-invalid", valid_class: "is-valid"  
     b.use :hint,  wrap_with: { tag: :span, class: :hint }
-    b.use :error, wrap_with: { tag: :span, class: "text-red-500" }
+    b.use :error, wrap_with: { tag: :span, class: :error }
 
     ## full_messages_for
     # If you want to display the full error message for the attribute, you can
@@ -76,7 +75,7 @@ SimpleForm.setup do |config|
   config.boolean_style = :nested
 
   # Default class for buttons
-  config.button_class = "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer"
+  config.button_class = "btn"
 
   # Method used to tidy up errors. Specify any Rails Array method.
   # :first lists the first message for each field.
@@ -109,7 +108,7 @@ SimpleForm.setup do |config|
   # config.item_wrapper_class = nil
 
   # How the label text should be generated altogether with the required text.
-  config.label_text = lambda { |label, required, explicit_label| "#{label}#{required ? ' <span class="text-red-500">*</span>' : ''}"}
+  config.label_text = lambda { |label, required, explicit_label| "#{label} #{required}" }
 
   # You can define the class to use on all labels. Default is nil.
   # config.label_class = nil

@@ -2,12 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-
 @layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+  .btn-gray {
+    @apply rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium;
+  }
+
+  .btn-blue {
+    @apply rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium;
+  }
+
+  .btn-submit {
+    @apply rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer;
+  }  
+
+  .form-input {
+    @apply block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full;
+  }  
+
+  .flex-between-center {
+    @apply flex justify-between items-center;
+  }
+
+  .title-h1 {
+    @apply font-bold text-4xl;
   }
 }
-
-*/
