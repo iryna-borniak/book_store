@@ -26,4 +26,16 @@
   .title-h1 {
     @apply font-bold text-4xl;
   }
+
+  .book-title {
+    @apply text-2xl text-slate-900 font-semibold hover:text-sky-600 transition duration-300 ease-in-out;
+  }
+
+  .book-text {
+    @apply my-3 text-neutral-600;
+  }
+
+  .book-border {
+    @apply border-t border-neutral-300;
+  }
 }
