@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.ordered_by_title
+    @books = collection
   end
   
   def show
@@ -36,17 +36,19 @@ class BooksController < ApplicationController
   end
   
   def destroy
-    @book = resource
-  
-    @book.destroy
+    resource.destroy    
     
     redirect_to books_path, notice: "Book was successfully destroyed.", status: :see_other    
   end
 
-  private  
+  private
+  
+  def collection
+    Book.ordered_by_title
+  end
 
   def resource
-    Book.find(params[:id])
+    collection.find(params[:id])
   end
   
   def book_params
