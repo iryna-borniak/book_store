@@ -37,5 +37,17 @@
 
   .book-border {
     @apply border-t border-neutral-300;
-  }
+  }  
+}
+
+.flash {
+  @apply w-max py-2 px-3 mb-10 mx-auto font-medium rounded-lg;
+}
+
+.flash-notice {
+  @apply bg-green-50 text-green-500;
+}
+
+.flash-alert {
+  @apply bg-red-50 text-red-500;
 }
