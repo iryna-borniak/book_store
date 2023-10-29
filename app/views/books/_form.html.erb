@@ -1,4 +1,4 @@
-<%= simple_form_for book, html: { class: "contents" } do |form| %>  
+<%= simple_form_for book, url: (book.new_record? ? books_path : book_path(book)), html: { class: "contents" } do |form| %>  
   <%= form.input :title, placeholder: "add title", wrapper_html: { class: "my-5" }, input_html: { class: "form-input" } %>
     
   <%= form.input :author, placeholder: "add author", wrapper_html: { class: "my-5" }, input_html: { class: "form-input" } %>
