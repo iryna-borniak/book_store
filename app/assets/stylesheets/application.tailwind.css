@@ -1,53 +1,10 @@
+@import "./components/typography.css";
+@import "./components/buttons.css";
+@import "./components/header.css";
+@import "./components/book.css";
+@import "./components/form.css";
+@import "./components/flash.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer components {
-  .btn-gray {
-    @apply rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium;
-  }
-
-  .btn-blue {
-    @apply rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium;
-  }
-
-  .btn-submit {
-    @apply rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer;
-  }  
-
-  .form-input {
-    @apply block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full;
-  }  
-
-  .flex-between-center {
-    @apply flex justify-between items-center;
-  }
-
-  .title-h1 {
-    @apply font-bold text-4xl;
-  }
-
-  .book-title {
-    @apply text-2xl text-slate-900 font-semibold hover:text-sky-600 transition duration-300 ease-in-out;
-  }
-
-  .book-text {
-    @apply my-3 text-neutral-600;
-  }
-
-  .book-border {
-    @apply border-t border-neutral-300;
-  }  
-}
-
-.flash {
-  @apply w-max py-2 px-3 mb-10 mx-auto font-medium rounded-lg;
-}
-
-.flash-notice {
-  @apply bg-green-50 text-green-500;
-}
-
-.flash-alert {
-  @apply bg-red-50 text-red-500;
-}

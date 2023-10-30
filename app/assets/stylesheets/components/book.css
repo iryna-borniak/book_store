@@ -1,0 +1,5 @@
+@layer components {
+  .book-border {
+    @apply border-t border-neutral-300;
+  }
+}

@@ -1,7 +1,5 @@
-<% if flash.present? %>
-  <% flash.each do |type, msg| %>
-    <p class="flash flash-<%= type %>">
-      <%= msg %>
-    </p>
-  <% end %>
+<% flash.each do |type, msg| %>
+  <p class="flash flash-<%= type %>">
+    <%= msg %>
+  </p>
 <% end %>
