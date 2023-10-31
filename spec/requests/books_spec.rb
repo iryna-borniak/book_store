@@ -3,9 +3,9 @@ require "rails_helper"
 RSpec.describe BooksController, type: :request do  
   let(:valid_attributes) { FactoryBot.attributes_for(:book) }
 
-  let(:invalid_attributes) { { title: "" } }
+  let(:invalid_attributes) { FactoryBot.attributes_for(:book, :empty_title) }
 
-  let(:new_attributes) { { title: "New Title" } }
+  let(:new_attributes) { FactoryBot.attributes_for(:book, :new_title) }
 
   let!(:book) { FactoryBot.create(:book) }
 
