@@ -1,0 +1,11 @@
+<div class="w-full">
+  <div class="flex-between-center">
+    <h1 class="title-h1">Books</h1>
+    
+    <%= link_to "New book", new_book_path, class: "btn-blue" %>
+  </div>
+
+  <div class="mx-auto lg:w-3/4 w-full">
+    <%= render partial: "books/book", collection: @books %>
+  </div>
+</div>

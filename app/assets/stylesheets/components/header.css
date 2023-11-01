@@ -1,0 +1,5 @@
+@layer components {
+  .flex-between-center {
+    @apply flex justify-between items-center;
+  }
+}

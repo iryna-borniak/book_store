@@ -1,0 +1,21 @@
+<div id="<%= dom_id book %>" class="book-border">
+  <p class="book-text">    
+    <h3 class="book-title">
+      <%= link_to book.title, book_path(book) %>
+    </h3>
+  </p>
+
+  <p class="book-text">
+    By
+    <span class="font-semibold"><%= book.author %></span>
+  </p>
+
+  <p class="book-text">
+    Isbn:
+    <span class="font-semibold"><%= book.isbn %></span>
+  </p>
+
+  <p class="book-text">
+    <%= book.description.truncate(200) %>    
+  </p>  
+</div>

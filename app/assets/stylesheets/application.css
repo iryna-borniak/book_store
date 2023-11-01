@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+.error, abbr[title="required"] {
+  color: red;
+}
+
+.is-invalid {
+  border: 1px solid red;
+}
+
+.is-valid {
+  border: 1px solid green;
+}
