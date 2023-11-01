@@ -3,7 +3,7 @@ FactoryBot.define do
     title { Faker::Book.title }
     author { Faker::Book.author }
     isbn { Faker::Number.number(digits: 13).to_s }
-    description { Faker::Lorem.paragraph(sentence_count: 10) }
+    description { Faker::Lorem.paragraph(sentence_count: 30) }
   end
 
   trait :empty_title do
