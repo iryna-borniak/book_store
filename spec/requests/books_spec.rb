@@ -14,7 +14,6 @@ RSpec.describe BooksController, type: :request do
       get books_url
 
       expect(response).to be_successful
-
       expect(response.body).to include(book.title)
     end
   end
@@ -24,7 +23,6 @@ RSpec.describe BooksController, type: :request do
       get book_url(book)
 
       expect(response).to be_successful
-
       expect(response.body).to include(book.title)
     end    
   end
@@ -42,7 +40,6 @@ RSpec.describe BooksController, type: :request do
       get edit_book_url(book)
 
       expect(response).to be_successful
-
       expect(response.body).to include(book.title)
     end
   end
@@ -55,7 +52,6 @@ RSpec.describe BooksController, type: :request do
         end.to change(Book, :count).by(1)
 
         expect(response).to be_redirect
-
         expect(flash[:notice]).to eq("Book was successfully created.")
       end
     end
@@ -81,7 +77,6 @@ RSpec.describe BooksController, type: :request do
         end.to change(book, :title).to(new_attributes[:title])
 
         expect(response).to redirect_to(book_url(book))
-
         expect(flash[:notice]).to eq("Book was successfully updated.")
       end      
     end
@@ -102,7 +97,6 @@ RSpec.describe BooksController, type: :request do
       end.to change(Book, :count).by(-1)
 
       expect(response).to redirect_to(books_url)
-
       expect(flash[:alert]).to eq("Book was successfully destroyed.")
     end    
   end
