@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :book do
-    title { "Sample Title" }
+    title { Faker::Book.title }
     author { Faker::Book.author }
     isbn { Faker::Number.number(digits: 13).to_s }
-    description { Faker::Lorem.paragraph }
+    description { Faker::Lorem.paragraph(sentence_count: 10) }
   end
 
   trait :empty_title do

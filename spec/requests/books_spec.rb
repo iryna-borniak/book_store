@@ -14,7 +14,7 @@ RSpec.describe BooksController, type: :request do
       get books_url
 
       expect(response).to be_successful
-      expect(response.body).to include(book.title)
+      expect(response.body).to include(CGI.escapeHTML(book.title))
     end
   end
 
@@ -23,7 +23,7 @@ RSpec.describe BooksController, type: :request do
       get book_url(book)
 
       expect(response).to be_successful
-      expect(response.body).to include(book.title)
+      expect(response.body).to include(CGI.escapeHTML(book.title))
     end    
   end
 
@@ -40,7 +40,7 @@ RSpec.describe BooksController, type: :request do
       get edit_book_url(book)
 
       expect(response).to be_successful
-      expect(response.body).to include(book.title)
+      expect(response.body).to include(CGI.escapeHTML(book.title))
     end
   end
 
