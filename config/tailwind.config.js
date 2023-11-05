@@ -9,6 +9,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        'regal-blue': 'rgba(255, 255, 255, 0.95)',
+        'regal-gray': 'rgba(0, 0, 0, 0.1)',
+        'regal-light': 'rgb(244, 244, 244)',
+      },
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },

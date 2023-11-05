@@ -1,11 +1,11 @@
-<div class="w-full">
-  <div class="flex-between-center">
-    <h1 class="title-h1">Books</h1>
-    
-    <%= link_to "New book", new_book_path, class: "btn-blue" %>
+<section class="main-banner">
+  <div class="main-content">
+    <h1 class="title-h1">The Latest Books</h1>
   </div>
+</section>
 
-  <div class="mx-auto lg:w-3/4 w-full">
+<section class="books-list">
+  <div class="books-content">
     <%= render partial: "books/book", collection: @books %>
   </div>
-</div>
+</section>

@@ -1,0 +1,17 @@
+@layer components {
+  .banner {
+    @apply banner-gradient pt-[90px];
+  }
+
+  .show-info {
+    @apply show-gradient pt-16 pb-20 border-t border-t-regal-light;
+  }
+
+  .show-description {
+    @apply show-gradient text-lg py-16 border-t border-t-regal-light;
+  }
+
+  .show-buttons {
+    @apply flex flex-col w-max sm:flex-row mt-11;
+  }
+}

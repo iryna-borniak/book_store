@@ -1,0 +1,13 @@
+@layer utilities {
+  .banner-gradient {
+    background: linear-gradient(90deg, #0045ff 0%, #16dfda 100%);
+  }
+
+  .show-gradient {
+    background: linear-gradient(180deg, #f7f7f7 0%, #ffffff 100%);
+  }
+
+  .main-banner-gradient {
+    background: transparent linear-gradient(135deg, #0071eb 30%, #14d4d8 100%);
+  }
+}

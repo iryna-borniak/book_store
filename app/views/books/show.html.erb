@@ -1,33 +1,33 @@
-<div class="mx-auto md:w-2/3 w-full flex">
-  <div class="mx-auto">
-    <div class="book-border">
-      <p class="book-text">
-        <h3 class="book-title">
-          <%= link_to @book.title, book_path(@book) %>
-        </h3>
-      </p>
+<section class="banner"></section>
 
-      <p class="book-text">
-        By
-        <span class="font-semibold"><%= @book.author %></span>
-      </p>
+<section class="show-info">
+  <div class="content">    
+    <h1><%= @book.title %></h1>    
 
-      <p class="book-text">
-        Isbn:
-        <span class="font-semibold"><%= @book.isbn %></span>
-      </p>
+    <p class="mb-3">
+      By
+      <span class="text-red-600"><%= @book.author %></span>
+    </p>
 
-      <p class="book-text">
-        <%= @book.description %>
-      </p>
-    </div>
-
-    <%= link_to "Edit this book", edit_book_path(@book), class: "mt-2 btn-gray" %>
-
-    <div class="inline-block ml-2">
-      <%= button_to "Destroy this book", book_path(@book), method: :delete, class: "mt-2 btn-gray" %>
-    </div>
-    
-    <%= link_to "Back to books", books_path, class: "ml-2 btn-gray" %>
+    <p class="uppercase mb-3">
+      Isbn:
+      <span><%= @book.isbn %></span>
+    </p>
   </div>
-</div>
+</section>
+
+<section class="show-description">
+  <div class="content">
+    <h2>Book description</h2>
+    
+    <p><%= @book.description %></p>    
+
+    <div class="show-buttons">
+      <%= link_to "Edit this book", edit_book_path(@book), class: "btn-gray" %>
+
+      <%= button_to "Destroy this book", book_path(@book), method: :delete, class: "btn-gray" %>
+
+      <%= link_to "Back to books", books_path, class: "btn-gray" %>
+    </div>
+  </div>
+</section>

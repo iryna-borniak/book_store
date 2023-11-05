@@ -1,11 +1,11 @@
 <%= simple_form_for book, url: url_for(book), html: { class: "contents" } do |form| %>  
-  <%= form.input :title, placeholder: "add title", wrapper_html: { class: "my-5" }, input_html: { class: "form-input" } %>
+  <%= form.input :title, placeholder: "add title", wrapper_html: { class: "mt-8" }, input_html: { class: "form-input" } %>
     
-  <%= form.input :author, placeholder: "add author", wrapper_html: { class: "my-5" }, input_html: { class: "form-input" } %>
+  <%= form.input :author, placeholder: "add author", wrapper_html: { class: "mt-4" }, input_html: { class: "form-input" } %>
     
-  <%= form.input :isbn, placeholder: "add ISBN (13 digits)", wrapper_html: { class: "my-5" }, input_html: { class: "form-input" } %>
+  <%= form.input :isbn, placeholder: "add ISBN (13 digits)", wrapper_html: { class: "mt-4" }, input_html: { class: "form-input" } %>
     
-  <%= form.input :description, as: :text, placeholder: "add description", wrapper_html: { class: "my-5" }, input_html: { class: "form-input" } %>  
+  <%= form.input :description, as: :text, placeholder: "add description", wrapper_html: { class: "mt-4 mb-11" }, input_html: { class: "form-input" } %>  
   
   <%= form.button :submit, class: "btn-submit" %> 
 <% end %>
