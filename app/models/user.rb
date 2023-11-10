@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :rememberable, :validatable
   
   validates :email, :encrypted_password, :username, :first_name, :last_name, presence: true
-  validates :email, :username, uniqueness: true
+  validates :email, :username, uniqueness: { case_sensitive: false }  
 end
