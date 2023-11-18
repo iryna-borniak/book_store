@@ -14,6 +14,11 @@ module.exports = {
         'regal-gray': 'rgba(0, 0, 0, 0.1)',
         'regal-light': 'rgb(244, 244, 244)',
       },
+      backgroundImage: {
+        'banner-gradient': 'linear-gradient(90deg, #0045ff, #16dfda)',
+        'show-gradient': 'linear-gradient(180deg, #f7f7f7, #ffffff)',
+        'main-banner-gradient': 'linear-gradient(135deg, #0071eb 30%, #14d4d8)',
+      },
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },

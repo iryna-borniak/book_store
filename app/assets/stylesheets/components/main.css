@@ -26,6 +26,6 @@
   }
   
   .main-banner {
-    @apply main-banner-gradient mb-14;
+    @apply bg-main-banner-gradient mb-14;
   }
 }

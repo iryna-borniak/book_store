@@ -1,14 +1,14 @@
 @layer components {
   .banner {
-    @apply banner-gradient pt-[90px];
+    @apply bg-banner-gradient pt-[90px];
   }
 
   .show-info {
-    @apply show-gradient pt-16 pb-20 border-t border-t-regal-light;
+    @apply bg-show-gradient pt-16 pb-20 border-t border-t-regal-light;
   }
 
   .show-description {
-    @apply show-gradient text-lg py-16 border-t border-t-regal-light;
+    @apply bg-show-gradient text-lg py-16 border-t border-t-regal-light;
   }
 
   .show-buttons {
