@@ -1,9 +1,9 @@
 require "rails_helper"
 
 RSpec.describe Devise::RegistrationsController, type: :request do  
-  let!(:user) { FactoryBot.create(:user) }
-  let(:valid_attributes) { FactoryBot.attributes_for(:user) }
-  let(:invalid_attributes) { FactoryBot.attributes_for(:user, :wrong_password) }
+  let!(:user) { create(:user) }
+  let(:valid_attributes) { attributes_for(:user) }
+  let(:invalid_attributes) { attributes_for(:user, :wrong_password) }
 
   describe "GET #new" do
     it "renders a successful response" do

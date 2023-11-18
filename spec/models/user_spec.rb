@@ -1,8 +1,8 @@
 require "rails_helper"
 
 RSpec.describe User, type: :model do
-  let!(:user) { FactoryBot.create(:user) }
-  let(:invalid_attribute) { FactoryBot.attributes_for(:user, :wrong_password) }
+  let!(:user) { create(:user) }
+  let(:invalid_attribute) { attributes_for(:user, :wrong_password) }
 
   it { is_expected.to validate_presence_of(:email) }
   it { is_expected.to validate_presence_of(:password) }

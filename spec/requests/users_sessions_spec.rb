@@ -1,9 +1,9 @@
 require "rails_helper"
 
 RSpec.describe Devise::SessionsController, type: :request do  
-  let!(:user) { FactoryBot.create(:user) }
+  let!(:user) { create(:user) }
   let(:valid_attributes) { { email: user.email, password: user.password } }
-  let(:invalid_attributes) { FactoryBot.attributes_for(:user, :wrong_password) }
+  let(:invalid_attributes) { attributes_for(:user, :wrong_password) }
 
   describe "GET #new" do
     it "renders a successful response" do

@@ -1,6 +1,4 @@
-Rails.application.routes.draw do  
-  root "books#index"
-  resources :books
+Rails.application.routes.draw do
   devise_for :users, skip: [:sessions, :registrations]
 
   devise_scope :user do
@@ -11,4 +9,7 @@ Rails.application.routes.draw do
     get 'users/sign_up', to: 'devise/registrations#new', as: :new_user_registration
     post 'users', to: 'devise/registrations#create', as: :user_registration
   end
+  
+  root "books#index"
+  resources :books  
 end
