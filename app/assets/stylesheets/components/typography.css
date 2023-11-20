@@ -4,6 +4,6 @@
   }
 
   .book-title {
-    @apply text-2xl text-slate-900 font-semibold transition duration-300 ease-in-out my-3;
+    @apply leading-7 text-2xl text-slate-900 font-semibold transition duration-300 ease-in-out my-3;
   }  
 }

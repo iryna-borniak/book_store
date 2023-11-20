@@ -1,19 +1,29 @@
 <%= link_to book_path(book) do %>
   <div id="<%= dom_id book %>" class="book">
-    <h3 class="book-title"><%= book.title %></h3>
-
-    <p class="mb-3">
-      By
-      <span class="font-semibold"><%= book.author %></span>
-    </p>
-
-    <p class="uppercase mb-3">
-      Isbn:
-      <span class="font-semibold"><%= book.isbn %></span>
-    </p>
+    <div class="book-image-container">
+      <% if book.cover_image.attached? %>
+        <%= image_tag book.cover_image, class: "book-img" %>
+      <% else %>
+        <%= image_tag "no-image-placeholder.png", alt: "No image available", class: "book-img" %>
+      <% end %>
+    </div>
     
-    <p class="book-description">
-      <%= book.description.truncate(200) %>
-    </p>
+    <div class="book-info-container">
+      <h3 class="book-title"><%= book.title %></h3>
+
+      <p class="mb-3">
+        By
+        <span class="font-semibold"><%= book.author %></span>
+      </p>
+
+      <p class="uppercase mb-3">
+        Isbn:
+        <span class="font-semibold"><%= book.isbn %></span>
+      </p>
+
+      <p class="book-description">
+        <%= book.description.truncate(200) %>
+      </p>
+    </div>
   </div>
 <% end %>

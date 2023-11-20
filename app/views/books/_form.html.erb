@@ -5,7 +5,11 @@
     
   <%= form.input :isbn, placeholder: "add ISBN (13 digits)", wrapper_html: { class: "mt-4" }, input_html: { class: "form-input" } %>
     
-  <%= form.input :description, as: :text, placeholder: "add description", wrapper_html: { class: "mt-4 mb-11" }, input_html: { class: "form-input" } %>  
+  <%= form.input :description, as: :text, placeholder: "add description", wrapper_html: { class: "mt-4" }, input_html: { class: "form-input" } %>  
   
+  <%= form.input :cover_image, as: :file, wrapper_html: { class: "mt-4" }, input_html: { class: "form-input" } %>
+
+  <%= form.input :pdf_file, as: :file, wrapper_html: { class: "mt-4 mb-11" }, input_html: { class: "form-input" } %>
+
   <%= form.button :submit, class: "btn-submit" %> 
 <% end %>
