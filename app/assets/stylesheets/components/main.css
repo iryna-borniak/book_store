@@ -1,6 +1,6 @@
 @layer components {
   .content {
-    @apply mx-auto md:max-w-[980px] w-full px-5;
+    @apply mx-auto md:max-w-content-md w-full px-5;
   }
 
   .books-content {
@@ -9,20 +9,10 @@
 
   .main-content {
     @apply max-w-6xl px-6 pt-52 pb-28 md:pb-32 m-auto;
-  }
+  }  
 
-  .main-content:after {
-    content: "";
-    position: absolute;
-    top: 50px;
-    right: 120px;
-    width: 580px;
-    max-width: 100%;
-    height: 600px;
-    background-image: url("ring.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    opacity: 0.2;
+  .main-content {
+    @apply after:absolute after:top-50 after:right-120 after:w-580 after:max-w-full after:h-600 after:bg-ring after:bg-no-repeat after:bg-contain after:opacity-20;
   }
   
   .main-banner {

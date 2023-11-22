@@ -24,6 +24,6 @@
   }
 
   .show-content {
-    @apply mx-auto md:max-w-[980px] w-full px-5 flex flex-wrap gap-10;
+    @apply mx-auto md:max-w-content-md w-full px-5 flex flex-wrap gap-10;
   }
 }
