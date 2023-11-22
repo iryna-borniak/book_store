@@ -9,12 +9,12 @@
 
   .main-content {
     @apply max-w-6xl px-6 pt-52 pb-28 md:pb-32 m-auto;
-  }  
-
+  }
+  
   .main-content {
     @apply after:absolute after:top-50 after:right-120 after:w-580 after:max-w-full after:h-600 after:bg-ring after:bg-no-repeat after:bg-contain after:opacity-20;
   }
-  
+
   .main-banner {
     @apply bg-main-banner-gradient mb-14;
   }

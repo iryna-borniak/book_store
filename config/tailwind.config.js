@@ -34,7 +34,7 @@ module.exports = {
       inset: {
         '50': '50px',
         '120': '120px',
-      },           
+      },
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
