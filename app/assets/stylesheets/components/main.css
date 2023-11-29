@@ -1,6 +1,6 @@
 @layer components {
   .content {
-    @apply mx-auto md:w-2/3 w-full px-5;
+    @apply mx-auto md:max-w-content-md w-full px-5;
   }
 
   .books-content {

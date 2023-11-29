@@ -1,26 +1,40 @@
 <section class="banner"></section>
 
 <section class="show-info">
-  <div class="content">    
-    <h1><%= @book.title %></h1>    
+  <div class="show-content">
+    <div class="show-image">
+      <% if @book.cover_image.attached? %>
+        <%= image_tag @book.cover_image %>
+      <% else %>
+        <%= image_tag "no-image-placeholder.png", alt: "No image available", class: "w-full" %>        
+      <% end %>
+    </div>
 
-    <p class="mb-3">
-      By
-      <span class="text-red-600"><%= @book.author %></span>
-    </p>
+    <div class="show-title">
+      <h1><%= @book.title %></h1>
 
-    <p class="uppercase mb-3">
-      Isbn:
-      <span><%= @book.isbn %></span>
-    </p>
+      <p class="mb-3">
+        By
+        <span class="text-red-600"><%= @book.author %></span>
+      </p>
+
+      <p class="uppercase mb-3">
+        Isbn:
+        <span><%= @book.isbn %></span>
+      </p>
+      
+      <% if user_signed_in? && @book.pdf_file.attached? %>
+        <%= link_to 'View PDF', rails_blob_path(@book.pdf_file), class: "btn-view-red" %>      
+      <% end %>
+    </div>
   </div>
 </section>
 
 <section class="show-description">
   <div class="content">
     <h2>Book description</h2>
-    
-    <p><%= @book.description %></p>    
+
+    <p><%= @book.description %></p>
 
     <div class="show-buttons">
       <%= link_to "Edit this book", edit_book_path(@book), class: "btn-gray" %>

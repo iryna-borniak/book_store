@@ -10,4 +10,8 @@
   .btn-submit {
     @apply rounded-lg py-3 px-7 bg-blue-600 text-white inline-block font-medium cursor-pointer mr-2 mb-3.5;
   }
+
+  .btn-view-red {
+    @apply w-fit mt-auto rounded-lg py-3 px-5 bg-red-600 text-white inline-block font-medium;
+  }
 }
