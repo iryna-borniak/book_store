@@ -1,5 +1,47 @@
 @layer components {
-  .book-border {
-    @apply border-t border-neutral-300;
+  .book {
+    @apply flex flex-wrap relative hover:cursor-pointer border-t border-neutral-300 pr-10 gap-6;
+  }  
+
+  .book-description {
+    @apply text-justify mb-3;
+  }
+
+  .book-description:after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 50%;
+    width: 15px;
+    height: 20px;
+    background-image: url("right_arrow.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: translateY(-50%);
+    opacity: 0.2;
+    transition: background-image 300ms, opacity 300ms;
+  }
+  
+  .book:hover .book-description:after {
+    background-image: url("right_arrow_blue.svg");
+    opacity: 1;
+  }
+  
+  .book:hover .book-title {
+    color: rgb(11, 105, 186);
+  }
+
+  .book-image-container {
+    @apply w-full sm:max-w-[135px] my-3;
+  }
+
+  .book-info-container {
+    @apply w-full sm:w-book-info-width;
+  }
+
+  .book-img {
+    @apply max-h-64 sm:max-h-40 rounded;
   }
 }

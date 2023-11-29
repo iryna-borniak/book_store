@@ -1,0 +1,29 @@
+@layer components {
+  .banner {
+    @apply bg-banner-gradient pt-[90px];
+  }
+
+  .show-info {
+    @apply bg-show-gradient pt-16 pb-20 border-t border-t-regal-light;
+  }
+
+  .show-description {
+    @apply bg-show-gradient text-lg py-16 border-t border-t-regal-light;
+  }
+
+  .show-buttons {
+    @apply flex flex-col w-max sm:flex-row mt-11;
+  }
+
+  .show-title {    
+    @apply sm:w-show-title-width flex flex-col;
+  }
+
+  .show-image {
+    @apply sm:w-1/3 mt-4;
+  }
+
+  .show-content {
+    @apply mx-auto md:max-w-content-md w-full px-5 flex flex-wrap gap-10;
+  }
+}

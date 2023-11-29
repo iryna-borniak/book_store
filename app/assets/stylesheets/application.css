@@ -14,7 +14,7 @@
  *= require_self
  */
 
-.error, abbr[title="required"] {
+.error, .error_notification, abbr[title="required"] {
   color: red;
 }
 

@@ -1,21 +1,29 @@
-<div id="<%= dom_id book %>" class="book-border">
-  <p class="book-text">    
-    <h3 class="book-title">
-      <%= link_to book.title, book_path(book) %>
-    </h3>
-  </p>
+<%= link_to book_path(book) do %>
+  <div id="<%= dom_id book %>" class="book">
+    <div class="book-image-container">
+      <% if book.cover_image.attached? %>
+        <%= image_tag book.cover_image, class: "book-img" %>
+      <% else %>
+        <%= image_tag "no-image-placeholder.png", alt: "No image available", class: "book-img" %>
+      <% end %>
+    </div>
+    
+    <div class="book-info-container">
+      <h3 class="book-title"><%= book.title %></h3>
 
-  <p class="book-text">
-    By
-    <span class="font-semibold"><%= book.author %></span>
-  </p>
+      <p class="mb-3">
+        By
+        <span class="font-semibold"><%= book.author %></span>
+      </p>
 
-  <p class="book-text">
-    Isbn:
-    <span class="font-semibold"><%= book.isbn %></span>
-  </p>
+      <p class="uppercase mb-3">
+        Isbn:
+        <span class="font-semibold"><%= book.isbn %></span>
+      </p>
 
-  <p class="book-text">
-    <%= book.description.truncate(200) %>    
-  </p>  
-</div>
+      <p class="book-description">
+        <%= book.description.truncate(200) %>
+      </p>
+    </div>
+  </div>
+<% end %>

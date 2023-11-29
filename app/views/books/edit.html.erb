@@ -1,9 +1,13 @@
-<div class="mx-auto md:w-2/3 w-full">
-  <h1 class="title-h1">Editing book</h1>
+<section class="banner"></section>
+
+<div class="content">
+  <h1 class="mt-12">Editing book</h1>
 
   <%= render "books/form", book: @book %>
 
-  <%= link_to "Show this book", book_path(@book), class: "ml-2 btn-gray" %>
+  <div class="edit-buttons">
+    <%= link_to "Show this book", book_path(@book), class: "btn-gray" %>
   
-  <%= link_to "Back to books", books_path, class: "ml-2 btn-gray" %>
+    <%= link_to "Back to books", books_path, class: "btn-gray" %>
+  </div>
 </div>
