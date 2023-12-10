@@ -2,7 +2,19 @@ class BooksController < ApplicationController
   def index
     @books = collection
   end
-  
+
+  def search
+    @search = Search.new(search_params)
+    @books = @search.search
+
+    render turbo_stream:
+      if @books.any?
+        turbo_stream.update("books", partial: "books/book", collection: @books, as: :book)
+      else
+        turbo_stream.update("books", partial: "books/no_books_found")
+    end
+  end
+
   def show
     @book = resource
   end
@@ -53,5 +65,9 @@ class BooksController < ApplicationController
   
   def book_params
     params.require(:book).permit(:title, :author, :isbn, :description, :cover_image, :pdf_file)
+  end
+
+  def search_params
+    params.require(:search).permit(:query)
   end
 end
