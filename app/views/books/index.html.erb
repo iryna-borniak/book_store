@@ -4,8 +4,16 @@
   </div>
 </section>
 
+<section class="books-search z-10">
+  <div class="books-content mb-14">
+    <%= render "books/search_form" %>
+  </div>
+</section>
+
 <section class="books-list">
   <div class="books-content">
-    <%= render partial: "books/book", collection: @books %>
+    <div id="books">
+      <%= render partial: "books/book", collection: @books %>
+    </div>
   </div>
 </section>

@@ -12,6 +12,6 @@
   }
 
   .main-nav {
-    @apply bg-regal-blue backdrop-saturate-200 backdrop-blur-lg border-b border-regal-gray w-full py-4 z-10 fixed;
+    @apply bg-regal-blue backdrop-saturate-200 backdrop-blur-lg border-b border-regal-gray w-full py-4 z-20 fixed;
   }
 }

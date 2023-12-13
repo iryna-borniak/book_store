@@ -1,17 +1,17 @@
 @layer components {
   .btn-gray {
-    @apply rounded-lg py-3 px-5 bg-gray-100 inline-block text-center font-medium mr-2 mb-3.5;
+    @apply rounded py-3 px-5 bg-gray-100 inline-block text-center font-medium mr-2 mb-3.5;
   }
 
   .btn-blue {
-    @apply rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium;
+    @apply rounded py-3 px-5 bg-blue-600 text-white inline-block font-medium;
   }
 
   .btn-submit {
-    @apply rounded-lg py-3 px-7 bg-blue-600 text-white inline-block font-medium cursor-pointer mr-2 mb-3.5;
+    @apply rounded py-3 px-7 bg-blue-600 text-white inline-block font-medium cursor-pointer mr-2 mb-3.5;
   }
 
   .btn-view-red {
-    @apply w-fit mt-auto rounded-lg py-3 px-5 bg-red-600 text-white inline-block font-medium;
+    @apply w-fit mt-auto rounded py-3 px-5 bg-red-600 text-white inline-block font-medium;
   }
 }
