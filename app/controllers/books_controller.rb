@@ -12,7 +12,7 @@ class BooksController < ApplicationController
         turbo_stream.update("books", partial: "books/book", collection: @books, as: :book)
       else
         turbo_stream.update("books", partial: "books/no_books_found")
-    end
+      end
   end
 
   def show

@@ -1,10 +1,14 @@
 require "rails_helper"
 
-RSpec.describe BooksController, type: :request do  
-  let(:valid_attributes) { FactoryBot.attributes_for(:book) }
-  let(:invalid_attributes) { FactoryBot.attributes_for(:book, :empty_title) }
-  let(:new_attributes) { FactoryBot.attributes_for(:book, :new_title) }
-  let!(:book) { FactoryBot.create(:book) }
+RSpec.describe BooksController, type: :request do
+  let(:empty_query) { "" }
+  let(:nonexistent_query) { "nonexistent_query" }
+  let(:valid_attributes) { attributes_for(:book) }
+  let(:invalid_attributes) { attributes_for(:book, :empty_title) }
+  let(:new_attributes) { attributes_for(:book, :new_title) }
+  let!(:book) { create(:book) }
+
+  before { BooksIndex.reset }
 
   describe "GET #index" do
     it "renders a successful response" do
@@ -12,6 +16,38 @@ RSpec.describe BooksController, type: :request do
 
       expect(response).to be_successful
       expect(response.body).to include(CGI.escapeHTML(book.title))
+    end
+  end
+
+  describe "GET #search" do
+    context "without a query" do
+      it "renders the turbo_stream update with book title" do
+        get search_path, params: { search: { query: empty_query } }
+
+        expect(response).to be_successful
+        expect(response.media_type).to eq Mime[:turbo_stream]
+        expect(response.body).to include(CGI.escapeHTML(book.title))
+      end
+    end
+
+    context "with existent query" do
+      it "renders the turbo_stream update with book title" do
+        get search_path, params: { search: { query: CGI.escapeHTML(book.title) } }
+        
+        expect(response).to be_successful
+        expect(response.media_type).to eq Mime[:turbo_stream]
+        expect(response.body).to include(CGI.escapeHTML(book.title))
+      end
+    end
+
+    context "with nonexistent query" do
+      it "renders the turbo_stream update with no books found" do
+        get search_path, params: { search: { query: nonexistent_query } }
+
+        expect(response).to be_successful
+        expect(response.media_type).to eq Mime[:turbo_stream]
+        expect(response.body).to include("No books found")
+      end
     end
   end
 
