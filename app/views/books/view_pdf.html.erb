@@ -1,0 +1,6 @@
+<div id="adobe-dc-view" class="h-screen pt-8"></div>
+
+<div data-controller="pdf"
+     data-pdf-url="<%= rails_blob_path(@book.pdf_file) %>"
+     data-pdf-filename="<%= @book.title %>">
+</div>

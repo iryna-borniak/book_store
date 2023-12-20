@@ -7,6 +7,10 @@ class BooksController < ApplicationController
     @book = resource
   end
   
+  def view_pdf
+    @book = resource
+  end
+
   def new
     @book = Book.new
   end
