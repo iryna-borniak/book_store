@@ -8,6 +8,7 @@
 @import "./components/flash.css";
 @import "./components/show.css";
 @import "./components/edit.css";
+@import "./components/pdf_book.css";
 
 @tailwind base;
 @tailwind components;

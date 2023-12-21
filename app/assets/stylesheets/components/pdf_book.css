@@ -1,0 +1,5 @@
+@layer components {
+  #adobe-dc-view {
+    @apply h-screen pt-8;
+  }
+}
