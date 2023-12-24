@@ -1,10 +1,12 @@
 require "rails_helper"
 
 RSpec.describe BooksController, type: :request do  
-  let(:valid_attributes) { FactoryBot.attributes_for(:book) }
-  let(:invalid_attributes) { FactoryBot.attributes_for(:book, :empty_title) }
-  let(:new_attributes) { FactoryBot.attributes_for(:book, :new_title) }
-  let!(:book) { FactoryBot.create(:book) }
+  let(:valid_attributes) { attributes_for(:book) }
+  let(:invalid_attributes) { attributes_for(:book, :empty_title) }
+  let(:new_attributes) { attributes_for(:book, :new_title) }
+  let!(:book) { create(:book) }
+  let!(:book_with_files) { create(:book, :with_files_attached) }
+  let!(:user) { create(:user) }
 
   describe "GET #index" do
     it "renders a successful response" do
@@ -22,6 +24,27 @@ RSpec.describe BooksController, type: :request do
       expect(response).to be_successful
       expect(response.body).to include(CGI.escapeHTML(book.title))
     end    
+  end
+
+  describe "GET #view_pdf" do
+    context "when user is signed in" do
+      it "renders a successful response" do
+        sign_in user
+
+        get view_pdf_path(book_with_files)
+
+        expect(response).to be_successful
+      end
+    end
+
+    context "when user is not signed in" do
+      it "redirects to 'Sign In' page" do
+        get view_pdf_path(book_with_files)
+
+        expect(response).to be_redirect
+        expect(flash[:alert]).to eq("You need to sign in or sign up before continuing.")
+      end
+    end
   end
 
   describe "GET #new" do
