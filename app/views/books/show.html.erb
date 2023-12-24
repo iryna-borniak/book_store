@@ -22,9 +22,9 @@
         Isbn:
         <span><%= @book.isbn %></span>
       </p>
-      
+
       <% if user_signed_in? && @book.pdf_file.attached? %>
-        <%= link_to 'View PDF', rails_blob_path(@book.pdf_file), class: "btn-view-red" %>      
+        <%= link_to "View PDF", view_pdf_path(@book), class: "btn-view-red" %>
       <% end %>
     </div>
   </div>

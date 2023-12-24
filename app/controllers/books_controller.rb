@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!, only: [:view_pdf]
+
   def index
     @books = collection
   end
@@ -7,6 +9,10 @@ class BooksController < ApplicationController
     @book = resource
   end
   
+  def view_pdf
+    @book = resource
+  end
+
   def new
     @book = Book.new
   end
