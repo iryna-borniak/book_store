@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.1.3"
+ruby "3.2.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.8"
@@ -53,6 +53,12 @@ gem "tailwindcss-rails", "~> 2.0", ">= 2.0.30"
 gem "simple_form"
 
 gem "devise", "~> 4.9"
+
+gem "active_storage_validations"
+
+gem "image_processing", "~> 1.2"
+
+gem "mini_magick", ">= 4.9.5"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
