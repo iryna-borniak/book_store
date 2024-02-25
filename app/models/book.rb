@@ -1,4 +1,6 @@
 class Book < ApplicationRecord
+  update_index("books") { self }
+
   has_one_attached :cover_image
   has_one_attached :pdf_file
 
