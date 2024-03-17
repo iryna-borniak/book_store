@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_19_000406) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_17_222844) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,6 +47,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_19_000406) do
     t.string "author", null: false
     t.string "isbn", null: false
     t.text "description", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "site_settings", force: :cascade do |t|
+    t.string "title", default: "E-Library", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

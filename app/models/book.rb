@@ -10,15 +10,12 @@ class Book < ApplicationRecord
   scope :ordered_by_title, -> { order(:title) }
 
   def restore_defaults!
-    default_attributes = {
-      title: "Title placeholder",
-      cover_image: {
-        io: File.open("app/assets/images/no-image-placeholder.png"),
-        filename: "no-image-placeholder.png",
-        content_type: "image/png"
-      }
-    }
+    update(title: "Title placeholder")
 
-    update(default_attributes)
+    cover_image.attach(
+      io: File.open("app/assets/images/no-image-placeholder.png"),
+      filename: "no-image-placeholder.png",
+      content_type: "image/png"
+    )
   end
 end

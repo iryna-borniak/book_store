@@ -16,4 +16,8 @@ Rails.application.routes.draw do
       patch :revert
     end
   end
+
+  resource :site_setting, only: [:edit, :update] do
+    put :revert
+  end
 end

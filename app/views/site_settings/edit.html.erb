@@ -1,0 +1,14 @@
+<section class="banner"></section>
+
+<div class="content">
+  <%= simple_form_for @site_setting, url: site_setting_path, html: { data: { controller: "handle-browser-tab" } } do |f| %>    
+    <%= f.input :title, input_html: { data: { action: "input->handle-browser-tab#setTitle" }, class: "form-input" } %>
+    <%= f.input :favicon, input_html: { data: { action: "change->handle-browser-tab#setIcon" }, class: "form-input" } %>
+      <div class="mb-10">
+        <%= render "browser_tab", site_setting: @site_setting %>
+      </div>      
+    <%= f.submit "Save", class: "btn-submit" %>
+  <% end %>
+
+  <%= button_to "Revert", revert_site_setting_path, method: :put, class: "btn-gray" %>
+</div>
