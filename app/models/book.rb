@@ -4,9 +4,21 @@ class Book < ApplicationRecord
 
   validates :title, :author, :description, presence: true
   validates :isbn, presence: true, uniqueness: { case_sensitive: false }, numericality: { only_integer: true }, length: { is: 13 }
-  validates :cover_image, dimension: { width: { min: 16, max: 180 },
-                                       height: { min: 16, max: 180 } },
-                          aspect_ratio: :square
+  validates :cover_image, dimension: { width: { min: 490, max: 1220 },
+                                       height: { min: 600, max: 1510 } }
 
   scope :ordered_by_title, -> { order(:title) }
+
+  def restore_defaults!
+    default_attributes = {
+      title: "Title placeholder",
+      cover_image: {
+        io: File.open("app/assets/images/no-image-placeholder.png"),
+        filename: "no-image-placeholder.png",
+        content_type: "image/png"
+      }
+    }
+
+    update(default_attributes)
+  end
 end

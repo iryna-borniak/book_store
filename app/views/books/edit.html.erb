@@ -6,6 +6,8 @@
   <%= render "books/form", book: @book %>
 
   <div class="edit-buttons">
+    <%= button_to "Revert", revert_book_path(@book), method: :patch, class: "btn-gray" %>
+
     <%= link_to "Show this book", book_path(@book), class: "btn-gray" %>
   
     <%= link_to "Back to books", books_path, class: "btn-gray" %>

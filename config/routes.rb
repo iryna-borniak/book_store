@@ -11,5 +11,9 @@ Rails.application.routes.draw do
   end
   
   root "books#index"
-  resources :books  
+  resources :books do
+    member do
+      patch :revert
+    end
+  end
 end

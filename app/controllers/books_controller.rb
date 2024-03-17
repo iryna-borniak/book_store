@@ -34,7 +34,17 @@ class BooksController < ApplicationController
       render :edit, status: :unprocessable_entity     
     end   
   end
-  
+
+  def revert
+    @book = resource
+
+    if @book.restore_defaults!
+      redirect_to edit_book_path(@book), notice: "Settings were successfully reverted."
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   def destroy
     resource.destroy    
     
