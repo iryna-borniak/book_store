@@ -1,4 +1,8 @@
+require "sidekiq/web"
+
 Rails.application.routes.draw do
+  mount Sidekiq::Web => "/sidekiq"
+
   devise_for :users, skip: [:sessions, :registrations]
 
   devise_scope :user do
